@@ -1,0 +1,9 @@
+class CreatePictes < ActiveRecord::Migration[7.0]
+  def change
+    create_table :pictes do |t|
+      t.string :name
+      t.references :imageable, polymorphic: true, index: true
+      t.timestamps
+    end
+  end
+end

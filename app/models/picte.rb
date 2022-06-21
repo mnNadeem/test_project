@@ -1,0 +1,2 @@
+class Picte < ApplicationRecord
+end

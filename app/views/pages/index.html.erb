@@ -1,0 +1,7 @@
+<% @pages.each do |page|%>
+  <h2><%= page.title %></h2>
+  <div><%= truncate(page.body, :length => 20)%> </div>
+  <br>
+  <%= link_to "Read Page", page%>
+<%end%>
+

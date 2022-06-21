@@ -1,0 +1,13 @@
+
+
+<h1><%= @page.title %></h1>
+<div>
+   <%= @page.body %>
+</div>
+<br>
+<%= link_to "Edit Page", edit_page_path(@page)%><br>
+<br>
+<%= link_to "Delete", page_path(@page), method: :delete, data: { confirm: "Are you sure?" } %>
+<br>
+<br>
+

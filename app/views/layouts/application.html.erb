@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Associationapp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <%= link_to "Home", root_path%>
+    <%= link_to "New", new_page_path%>
+
+    <% if admin_user_signed_in? %>
+
+      <%= link_to "Sign Out",
+      destroy_admin_user_session_path, method: :delete%>
+    <% else %>
+
+      <%= link_to "Sign In",
+      new_admin_user_session_path%>
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+    <% @greeting = capture do %>
+      <p>Welcome! The date and time is <%= Time.now %></p>
+    <% end %>
+    <!-- footer section -->
+    <div class="footer">
+      <div class="columns">
+        <div class="top-products">
+          <h4>Top Products</h4>
+          <br>
+          <p>Managed Website</p>
+          <p>Managed Reputation</p>
+          <p>Power Tools</p>
+          <p>Marketting Service</p>
+        </div>
+        <div class="newsletter">
+          <h4>Newsletter</h4>
+          <br>
+          <p class="lead">You can trust us. We only send promo offers, not a single spam</p>
+          <div class="column1">
+              <input type="email" placeholder="Your Email Address">
+              <button  type="submit" class="btn btn-primary">Subscribe</button>
+          </div>
+        </div>
+        <div class="instagram-feed">
+          <h4>Instagram Feed</h4>
+          <div class="columns2">
+            <div>
+              <img src="i1.jpg">
+              <img src="i2.jpg">
+              <img src="i3.jpg">
+              <img src="i4.jpg">
+            </div>
+            <div>
+              <img src="i5.jpg">
+              <img src="i6.jpg">
+              <img src="i7.jpg">
+              <img src="i8.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copy-right">
+        <p>Copyright &copy2021 All rights reserved | This template is made with
+          <i class="fa-regular fa-heart heart"></i>
+          by <span class="colorlib">Colorlib</span>
+        </p>
+        <div class="footer-icons ">
+          <div>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i> </a>
+          </div>
+          <div>
+            <a href="#"><i class="fa-brands fa-twitter"></i> </a>
+          </div>
+          <div>
+            <a href="#"><i class="fa-solid fa-circle"></i> </a>
+          </div>
+          <div>
+            <a href="#"><i class="fa-brands fa-behance"></i> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
